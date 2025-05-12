@@ -28,7 +28,7 @@ export const createGoogleCalendarEvent = async (token: any, summary: string, dat
     const calendar = google.calendar({ version:"v3", auth: oauth2Client });
 
     const start = new Date(date);
-    const end = new Date(start.getDate() + 60 * 60 * 1000);
+    const end = new Date(start.getTime() + 60 * 60 * 1000);
 
     const event = {
         summary,
